@@ -1,25 +1,26 @@
 /* =========================================
-   VARIÁVEIS DE CORES (Facilita alterar depois)
+   VARIÁVEIS DE CORES E TEMA
    ========================================= */
 :root {
     --bg-fundo: #0a0a0f;
     --bg-card: #151520;
     --roxo-neon: #8a2be2;
-    --roxo-escuro: #5c1b9e;
+    --roxo-hover: #9d4edd;
     --verde-sucesso: #00ff88;
     --texto-claro: #ffffff;
     --texto-cinza: #a0a0a0;
+    --borda-suave: rgba(255, 255, 255, 0.1);
 }
 
 /* =========================================
-   CONFIGURAÇÕES GLOBAIS
+   RESETS E CONFIGURAÇÕES GLOBAIS
    ========================================= */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    scroll-behavior: smooth; /* Rolagem suave ao clicar nos links do menu */
+    scroll-behavior: smooth;
 }
 
 body {
@@ -42,7 +43,7 @@ header {
     top: 0;
     z-index: 1000;
     box-shadow: 0 4px 15px rgba(138, 43, 226, 0.2);
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(8px); /* Efeito de vidro borrado */
 }
 
 .logo {
@@ -75,16 +76,16 @@ nav a:hover {
 }
 
 /* =========================================
-   DESTAQUE (HERO SECTION)
+   DESTAQUE INICIAL (HERO)
    ========================================= */
 .hero {
     text-align: center;
     padding: 100px 20px;
     background: linear-gradient(180deg, rgba(138,43,226,0.1) 0%, var(--bg-fundo) 100%);
-    border-bottom: 1px solid rgba(255,255,255,0.05);
+    border-bottom: 1px solid var(--borda-suave);
 }
 
-.hero h2 {
+.hero h1 {
     font-size: 42px;
     margin-bottom: 15px;
     font-weight: 800;
@@ -99,33 +100,26 @@ nav a:hover {
 }
 
 /* =========================================
-   TÍTULOS DAS CATEGORIAS
+   TÍTULOS E VITRINE DE PRODUTOS
    ========================================= */
 .titulo-categoria {
     text-align: left;
     font-size: 28px;
     color: var(--texto-claro);
-    margin: 60px auto 10px auto;
+    margin: 60px auto 20px auto;
     width: 90%;
     max-width: 1200px;
-    padding-bottom: 15px;
+    padding-bottom: 10px;
     border-bottom: 2px solid rgba(138, 43, 226, 0.3);
     text-transform: uppercase;
     letter-spacing: 1px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
 }
 
-/* =========================================
-   VITRINE E CARDS DE PRODUTOS
-   ========================================= */
 .vitrine {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
-    padding: 30px 20px;
-    flex-wrap: wrap;
+    padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -134,24 +128,22 @@ nav a:hover {
     background-color: var(--bg-card);
     padding: 20px;
     border-radius: 12px;
-    width: 280px;
     text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--borda-suave);
     transition: all 0.4s ease;
     display: flex;
     flex-direction: column;
 }
 
-/* Efeito de flutuar e brilhar ao passar o mouse */
 .card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-8px);
     border-color: var(--roxo-neon);
-    box-shadow: 0 10px 30px rgba(138, 43, 226, 0.15);
+    box-shadow: 0 10px 30px rgba(138, 43, 226, 0.2);
 }
 
 .img-produto {
     width: 100%;
-    height: 160px;
+    height: 180px;
     object-fit: cover;
     border-radius: 8px;
     margin-bottom: 15px;
@@ -168,7 +160,7 @@ nav a:hover {
     font-size: 14px;
     color: var(--texto-cinza);
     margin-bottom: auto; /* Empurra o preço e o botão para o fundo */
-    line-height: 1.4;
+    line-height: 1.5;
 }
 
 .preco {
@@ -181,7 +173,7 @@ nav a:hover {
 }
 
 /* =========================================
-   BOTÕES
+   BOTÕES DE COMPRA
    ========================================= */
 button {
     background-color: transparent;
@@ -199,9 +191,145 @@ button {
 }
 
 button:hover {
-    background-color: var(--roxo-neon);
+    background-color: var(--roxo-hover);
     box-shadow: 0 0 15px rgba(138, 43, 226, 0.5);
     color: #fff;
+    border-color: var(--roxo-hover);
+}
+
+/* =========================================
+   CARRINHO DE COMPRAS E MODAL
+   ========================================= */
+#btn-carrinho {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--roxo-neon);
+    color: white;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    font-size: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(138, 43, 226, 0.6);
+    z-index: 1000;
+    border: none;
+    transition: transform 0.3s ease;
+}
+
+#btn-carrinho:hover {
+    transform: scale(1.1);
+    background-color: var(--roxo-hover);
+}
+
+#contador-carrinho {
+    background-color: var(--verde-sucesso);
+    color: #000;
+    font-size: 14px;
+    font-weight: bold;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    border: 2px solid var(--bg-fundo);
+}
+
+#modal-carrinho {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    backdrop-filter: blur(5px);
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+#modal-carrinho.escondido {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.conteudo-carrinho {
+    background-color: var(--bg-card);
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 450px;
+    border: 2px solid var(--roxo-neon);
+    position: relative;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+
+.conteudo-carrinho h2 {
+    margin-bottom: 20px;
+    color: var(--texto-claro);
+    border-bottom: 1px solid var(--borda-suave);
+    padding-bottom: 10px;
+}
+
+#lista-carrinho {
+    list-style: none;
+    margin-bottom: 20px;
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+#lista-carrinho li {
+    padding: 12px 0;
+    border-bottom: 1px dashed var(--borda-suave);
+    color: var(--texto-cinza);
+    display: flex;
+    justify-content: space-between;
+}
+
+.total-carrinho {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: var(--texto-claro);
+    display: flex;
+    justify-content: space-between;
+}
+
+#valor-total {
+    color: var(--verde-sucesso);
+    font-weight: bold;
+}
+
+.fechar {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 32px;
+    color: var(--texto-cinza);
+    cursor: pointer;
+    line-height: 1;
+    width: auto;
+}
+
+.fechar:hover {
+    color: var(--texto-claro);
+    box-shadow: none;
+}
+
+.btn-finalizar {
+    background-color: var(--roxo-neon);
+    color: white;
 }
 
 /* =========================================
@@ -212,7 +340,7 @@ footer {
     padding: 30px;
     background-color: var(--bg-card);
     margin-top: 60px;
-    border-top: 1px solid rgba(255,255,255,0.05);
+    border-top: 1px solid var(--borda-suave);
     color: var(--texto-cinza);
     font-size: 14px;
 }
@@ -233,18 +361,17 @@ footer {
         gap: 15px;
     }
 
-    .hero h2 {
+    .hero h1 {
         font-size: 32px;
     }
 
     .titulo-categoria {
         font-size: 24px;
-        justify-content: center;
         text-align: center;
+        justify-content: center;
     }
 
-    .card {
-        width: 100%; /* Ocupa a tela toda no celular */
-        max-width: 350px;
+    .vitrine {
+        grid-template-columns: 1fr; /* 1 card por linha no celular */
     }
 }
