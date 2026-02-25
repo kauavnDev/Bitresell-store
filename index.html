@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BitResell Store - Os melhores itens, moedas e contas para a sua gameplay com entrega automática.">
     <title>Catálogo Completo | BitResell Store</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <div class="logo">BitResell Store</div>
-        <nav>
+        <nav aria-label="Menu Principal">
             <ul>
-                <li><a href="index.html">Início</a></li>
+                <li><a href="#">Início</a></li>
                 <li><a href="#bloxfruits">Blox Fruits</a></li>
                 <li><a href="#freefire">Free Fire</a></li>
                 <li><a href="#minecraft">Minecraft</a></li>
@@ -22,77 +23,95 @@
 
     <main>
         <section class="hero">
-            <h2>O Arsenal Completo para a sua Gameplay</h2>
-            <p>Contas, itens e moedas com entrega automática via Discord.</p>
+            <h1>O Arsenal Completo para a sua Gameplay</h1>
+            <p>Contas, itens e moedas com entrega automática rápida e segura via Discord.</p>
         </section>
 
         <h2 class="titulo-categoria" id="bloxfruits">🏴‍☠️ Roblox: Blox Fruits</h2>
-        <section class="vitrine">
-            <div class="card">
-                <img src="https://placehold.co/300x200/1a1a24/ff4500?text=Conta+Max" alt="Conta Blox Fruits Level Max" class="img-produto">
+        <section class="vitrine" aria-label="Produtos de Blox Fruits">
+            <article class="card">
+                <img src="https://placehold.co/300x200/1a1a24/ff4500?text=Conta+Max" alt="Conta Blox Fruits Level Max" class="img-produto" loading="lazy">
                 <h3>Conta Level Max (2550)</h3>
                 <p>Godhuman, CDK e Soul Guitar garantidos. 100% Full Acesso.</p>
                 <span class="preco">R$ 35,00</span>
-                <button onclick="enviarPedidoDiscord('Conta Max Blox Fruits')">Comprar (Pix)</button>
-            </div>
+                <button onclick="adicionarAoCarrinho('Conta Max Blox Fruits', 35.00)" aria-label="Adicionar Conta Max Blox Fruits ao carrinho">Adicionar ao Carrinho</button>
+            </article>
             
-            <div class="card">
-                <img src="https://placehold.co/300x200/1a1a24/00bfff?text=Fruta+Kitsune" alt="Fruta Kitsune Física" class="img-produto">
+            <article class="card">
+                <img src="https://placehold.co/300x200/1a1a24/00bfff?text=Fruta+Kitsune" alt="Fruta Kitsune Física" class="img-produto" loading="lazy">
                 <h3>Fruta Kitsune (Física)</h3>
-                <p>Entrega via Trade (Sea 2 ou 3). Estoque limitado!</p>
+                <p>Entrega via Trade (Sea 2 ou 3). Estoque limitado na loja!</p>
                 <span class="preco">R$ 25,00</span>
-                <button onclick="enviarPedidoDiscord('Fruta Kitsune')">Comprar (Pix)</button>
-            </div>
+                <button onclick="adicionarAoCarrinho('Fruta Kitsune Física', 25.00)" aria-label="Adicionar Fruta Kitsune ao carrinho">Adicionar ao Carrinho</button>
+            </article>
 
-            <div class="card">
-                <img src="https://placehold.co/300x200/1a1a24/8a2be2?text=Dark+Blade" alt="Gamepass Dark Blade" class="img-produto">
+            <article class="card">
+                <img src="https://placehold.co/300x200/1a1a24/8a2be2?text=Dark+Blade" alt="Gamepass Dark Blade" class="img-produto" loading="lazy">
                 <h3>Gamepass: Dark Blade</h3>
-                <p>Enviado como presente direto para o seu nick.</p>
+                <p>Enviado como presente direto para o seu nick do Roblox.</p>
                 <span class="preco">R$ 40,00</span>
-                <button onclick="enviarPedidoDiscord('Gamepass Dark Blade')">Comprar (Pix)</button>
-            </div>
+                <button onclick="adicionarAoCarrinho('Gamepass Dark Blade', 40.00)" aria-label="Adicionar Gamepass Dark Blade ao carrinho">Adicionar ao Carrinho</button>
+            </article>
         </section>
 
         <h2 class="titulo-categoria" id="freefire">🔥 Free Fire</h2>
-        <section class="vitrine">
-            <div class="card">
-                <img src="https://placehold.co/300x200/1a1a24/00ff88?text=1040+Dimas" alt="Diamantes Free Fire" class="img-produto">
+        <section class="vitrine" aria-label="Produtos de Free Fire">
+            <article class="card">
+                <img src="https://placehold.co/300x200/1a1a24/00ff88?text=1040+Dimas" alt="Diamantes Free Fire" class="img-produto" loading="lazy">
                 <h3>1040 Diamantes + Bônus</h3>
                 <p>Recarga expressa apenas com o seu ID do jogo.</p>
                 <span class="preco">R$ 30,00</span>
-                <button onclick="enviarPedidoDiscord('1040 Diamantes FF')">Comprar (Pix)</button>
-            </div>
-            <div class="card">
-                <img src="https://placehold.co/300x200/1a1a24/ffd700?text=Passe+Booyah" alt="Passe Booyah" class="img-produto">
+                <button onclick="adicionarAoCarrinho('1040 Diamantes FF', 30.00)" aria-label="Adicionar 1040 Diamantes ao carrinho">Adicionar ao Carrinho</button>
+            </article>
+            
+            <article class="card">
+                <img src="https://placehold.co/300x200/1a1a24/ffd700?text=Passe+Booyah" alt="Passe Booyah" class="img-produto" loading="lazy">
                 <h3>Passe Booyah (Premium)</h3>
-                <p>Ativação direta na conta via ID.</p>
+                <p>Ativação direta na conta via ID. Entrega imediata.</p>
                 <span class="preco">R$ 15,00</span>
-                <button onclick="enviarPedidoDiscord('Passe Booyah FF')">Comprar (Pix)</button>
-            </div>
+                <button onclick="adicionarAoCarrinho('Passe Booyah FF', 15.00)" aria-label="Adicionar Passe Booyah ao carrinho">Adicionar ao Carrinho</button>
+            </article>
         </section>
 
         <h2 class="titulo-categoria" id="minecraft">⛏️ Minecraft</h2>
-        <section class="vitrine">
-            <div class="card">
-                <img src="https://placehold.co/300x200/1a1a24/228b22?text=Conta+Full+Acesso" alt="Minecraft Full Acesso" class="img-produto">
-                <h3>Conta Full Acesso (Java+Bedrock)</h3>
-                <p>Mude o e-mail, senha, skin e nick na hora.</p>
-                <span class="preco">R$ 45,00</span>
-                <button onclick="enviarPedidoDiscord('Minecraft FA')">Comprar (Pix)</button>
-            </div>
+        <section class="vitrine" aria-label="Produtos de Minecraft">
+            <article class="card">
+                <img src="https://placehold.co/300x200/1a1a24/228b22?text=Addons+Premium" alt="Pacote de Addons Minecraft" class="img-produto" loading="lazy">
+                <h3>Pacote Addons Premium (Mobile)</h3>
+                <p>Mods exclusivos de textura e performance para a sua versão.</p>
+                <span class="preco">R$ 15,00</span>
+                <button onclick="adicionarAoCarrinho('Addons Premium Mobile', 15.00)" aria-label="Adicionar Addons ao carrinho">Adicionar ao Carrinho</button>
+            </article>
         </section>
 
         <h2 class="titulo-categoria" id="pokemon">⚡ Pokémon (Cobblemon)</h2>
-        <section class="vitrine">
-            <div class="card">
-                <img src="https://placehold.co/300x200/1a1a24/ff1493?text=VIP+Torneio" alt="VIP Servidor Cobblemon" class="img-produto">
-                <h3>Passe VIP (Ligas & Torneios)</h3>
-                <p>Vantagens exclusivas no servidor e acesso a torneios restritos.</p>
+        <section class="vitrine" aria-label="Produtos de Cobblemon">
+            <article class="card">
+                <img src="https://placehold.co/300x200/1a1a24/ff1493?text=Passe+Torneio" alt="Passe de Torneio Cobblemon" class="img-produto" loading="lazy">
+                <h3>Passe Liga & Torneios</h3>
+                <p>Ingresso de acesso para disputar a liga oficial do nosso servidor.</p>
                 <span class="preco">R$ 20,00</span>
-                <button onclick="enviarPedidoDiscord('VIP Cobblemon')">Comprar (Pix)</button>
-            </div>
+                <button onclick="adicionarAoCarrinho('Passe Liga Cobblemon', 20.00)" aria-label="Adicionar Passe Cobblemon ao carrinho">Adicionar ao Carrinho</button>
+            </article>
         </section>
     </main>
+
+    <button id="btn-carrinho" onclick="abrirCarrinho()" aria-label="Abrir carrinho de compras">
+        🛒 <span id="contador-carrinho">0</span>
+    </button>
+
+    <div id="modal-carrinho" class="escondido" role="dialog" aria-labelledby="titulo-carrinho" aria-modal="true">
+        <div class="conteudo-carrinho">
+            <button class="fechar" onclick="fecharCarrinho()" aria-label="Fechar carrinho">&times;</button>
+            <h2 id="titulo-carrinho">Seu Carrinho</h2>
+            <ul id="lista-carrinho">
+                </ul>
+            <div class="total-carrinho">
+                <strong>Total:</strong> <span id="valor-total">R$ 0,00</span>
+            </div>
+            <button class="btn-finalizar" onclick="finalizarCompra()">Finalizar Pedido no Discord</button>
+        </div>
+    </div>
 
     <footer>
         <p>&copy; 2026 BitResell Store. Todos os direitos reservados.</p>
