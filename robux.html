@@ -3,41 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Robux | BitResell Store</title>
+    <meta name="description" content="Compre pacotes de Robux com entrega automática na BitResell Store.">
+    <title>Comprar Robux | BitResell Store</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <div class="logo">BitResell Store</div>
-        <nav>
+        <nav aria-label="Menu Principal">
             <ul>
-                <li><a href="index.html">Voltar ao Catálogo</a></li>
+                <li><a href="index.html">← Voltar ao Início</a></li>
             </ul>
         </nav>
     </header>
 
-    <main class="pagina-produto">
-        <div class="imagem-destaque">
-            <img src="https://placehold.co/600x400/1a1a24/8a2be2?text=Robux+Premium" alt="Robux">
-        </div>
-        
-        <div class="detalhes-produto">
-            <h2>Pacote de Robux (Entrega Automática)</h2>
-            <p class="descricao">Compre Robux com segurança e receba diretamente na sua conta. Nosso sistema é automatizado para garantir a entrega mais rápida do mercado.</p>
-            
-            <div class="opcoes-compra">
-                <label for="quantidade">Escolha o pacote:</label>
-                <select id="quantidade">
-                    <option value="400">400 Robux - R$ 25,00</option>
-                    <option value="800">800 Robux - R$ 45,00</option>
-                    <option value="1700">1.700 Robux - R$ 85,00</option>
-                </select>
-            </div>
+    <main>
+        <section class="hero" style="padding: 60px 20px;">
+            <h1>Pacotes de Robux</h1>
+            <p>Escolha a quantidade ideal e receba direto na sua conta do Roblox com total segurança.</p>
+        </section>
 
-            <span class="preco-destaque">A partir de R$ 25,00</span>
-            <button class="btn-comprar">Comprar Agora (Pix)</button>
-        </div>
+        <h2 class="titulo-categoria">💎 Escolha o seu Pacote</h2>
+        
+        <section class="vitrine" aria-label="Pacotes de Robux">
+            <article class="card">
+                <img src="https://placehold.co/300x200/1a1a24/00bfff?text=400+Robux" alt="400 Robux" class="img-produto" loading="lazy">
+                <h3>400 Robux</h3>
+                <p>Ideal para comprar gamepasses e skins básicas.</p>
+                <span class="preco">R$ 25,00</span>
+                <button onclick="adicionarAoCarrinho('400 Robux', 25.00)" aria-label="Adicionar 400 Robux ao carrinho">Adicionar ao Carrinho</button>
+            </article>
+
+            <article class="card">
+                <img src="https://placehold.co/300x200/1a1a24/00bfff?text=800+Robux" alt="800 Robux" class="img-produto" loading="lazy">
+                <h3>800 Robux</h3>
+                <p>O pacote mais popular entre os jogadores da loja.</p>
+                <span class="preco">R$ 45,00</span>
+                <button onclick="adicionarAoCarrinho('800 Robux', 45.00)" aria-label="Adicionar 800 Robux ao carrinho">Adicionar ao Carrinho</button>
+            </article>
+
+            <article class="card">
+                <img src="https://placehold.co/300x200/1a1a24/00bfff?text=1700+Robux" alt="1700 Robux" class="img-produto" loading="lazy">
+                <h3>1.700 Robux</h3>
+                <p>Para quem quer dominar os servidores e ter os melhores itens.</p>
+                <span class="preco">R$ 85,00</span>
+                <button onclick="adicionarAoCarrinho('1700 Robux', 85.00)" aria-label="Adicionar 1700 Robux ao carrinho">Adicionar ao Carrinho</button>
+            </article>
+
+            <article class="card">
+                <img src="https://placehold.co/300x200/1a1a24/00bfff?text=4500+Robux" alt="4500 Robux" class="img-produto" loading="lazy">
+                <h3>4.500 Robux</h3>
+                <p>Ostentação máxima. Compre absolutamente tudo o que quiser!</p>
+                <span class="preco">R$ 220,00</span>
+                <button onclick="adicionarAoCarrinho('4500 Robux', 220.00)" aria-label="Adicionar 4500 Robux ao carrinho">Adicionar ao Carrinho</button>
+            </article>
+        </section>
     </main>
+
+    <button id="btn-carrinho" onclick="abrirCarrinho()" aria-label="Abrir carrinho de compras">
+        🛒 <span id="contador-carrinho">0</span>
+    </button>
+
+    <div id="modal-carrinho" class="escondido" role="dialog" aria-labelledby="titulo-carrinho" aria-modal="true">
+        <div class="conteudo-carrinho">
+            <button class="fechar" onclick="fecharCarrinho()" aria-label="Fechar carrinho">&times;</button>
+            <h2 id="titulo-carrinho">Seu Carrinho</h2>
+            <ul id="lista-carrinho"></ul>
+            <div class="total-carrinho">
+                <strong>Total:</strong> <span id="valor-total">R$ 0,00</span>
+            </div>
+            <button class="btn-finalizar" onclick="finalizarCompra()">Finalizar Pedido no Discord</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 BitResell Store. Todos os direitos reservados.</p>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
